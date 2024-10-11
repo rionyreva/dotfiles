@@ -12,8 +12,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./pcloud.nix
-      ./lxqt.nix
-      ./plasma.nix
+      ./xfce.nix
+      ./amdgpu.nix
     ];
 
   #### Bootloader and Kernel configuration ####################################################
@@ -127,7 +127,7 @@
   users.users.rionyreva = {
     isNormalUser = true;
     description = "Avery Noir";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd"];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "render" "video" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -171,7 +171,7 @@
       # withOpenASAR = true;
       withVencord = true;
     })
-  vesktop # Screensharing with audio on wayland
+  vesktop
   session-desktop
   tutanota-desktop
   pixelorama
@@ -180,8 +180,9 @@
   gimp
   gimpPlugins.gmic
   kdePackages.k3b
-  kdePackages.ghostwriter
-  # libsForQt5.ghostwriter # Install Qt5 version first if newest gives you errors.
+  xfce.xfburn
+  # kdePackages.ghostwriter
+  libsForQt5.ghostwriter # Install Qt5 version first if newest gives you errors.
   blender-hip
   orca-slicer
   kdePackages.kdenlive
@@ -194,7 +195,7 @@
 # OBS Studio with plugins.
     (pkgs.wrapOBS {
     plugins = with pkgs.obs-studio-plugins; [
-      wlrobs # Obs-studio plugin that allows you to screen capture on wlroots based wayland compositors
+      # wlrobs # Obs-studio plugin that allows you to screen capture on wlroots based wayland compositors
       waveform # Audio spectral analysis plugin for OBS
       obs-vkcapture # OBS Linux Vulkan/OpenGL game capture
       obs-vertical-canvas # Plugin for OBS Studio to add vertical canvas
@@ -208,7 +209,6 @@
     ];
   })
   prismlauncher
-  space-cadet-pinball
   lutris
     (lutris.override {
       extraLibraries = pkgs: [
@@ -229,11 +229,22 @@
   mgba
   duckstation
   pcsx2
-  ryujinx
+  # ryujinx
   dolphin-emu
-  rmg-wayland
+  rmg
   pokemmo-installer
   modrinth-app
+  # space-cadet-pinball
+  amberol
+  plank
+  putty
+  jdk
+  gst_all_1.gstreamer
+  gst_all_1.gst-plugins-rs
+  gst_all_1.gst-plugins-bad
+  gst_all_1.gst-plugins-ugly
+  gst_all_1.gst-plugins-good
+  gst_all_1.gst-plugins-base
   ];
 
   #### Programs and their configurations #####################################################
@@ -251,6 +262,7 @@
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
+  #   enableBrowserSocket = true;
   # };
 
   # Install steam.
@@ -319,7 +331,7 @@
   # Enable Flatpaks.
   services.flatpak.enable = true;
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-kde ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Ensure Flathub is added as a Flatpak remote.
   systemd.services.flatpak-repo = {
@@ -349,8 +361,6 @@
         enable = true;
         gpuOverclock.enable = true;
     };
-
-  programs.labwc.enable = true;
 
 ###############################################################################
 
