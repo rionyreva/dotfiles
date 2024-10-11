@@ -13,6 +13,7 @@
       ./hardware-configuration.nix
       ./pcloud.nix
       ./lxqt.nix
+      ./plasma.nix
     ];
 
   #### Bootloader and Kernel configuration ####################################################
@@ -348,6 +349,8 @@
         enable = true;
         gpuOverclock.enable = true;
     };
+
+  programs.labwc.enable = true;
 
 ###############################################################################
 

@@ -8,9 +8,9 @@
 
   # Enable the KDE Plasma 6 Desktop Environment.
 
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  #services.xserver.enable = true;
+  #services.displayManager.sddm.enable = true;
+  #services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Excluding some KDE Plasma applications from the default install
