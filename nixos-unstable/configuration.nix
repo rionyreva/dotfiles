@@ -12,6 +12,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./pcloud.nix
+      ./lxqt.nix
     ];
 
   #### Bootloader and Kernel configuration ####################################################
@@ -100,25 +101,6 @@
     variant = "";
   };
 
-  #### Desktop Enviroment ##############################################################
-
-  # Enable the KDE Plasma 6 Desktop Environment.
-
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
-  # Excluding some KDE Plasma applications from the default install
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    plasma-browser-integration
-  ];
-
-  # GTK themes are not applied in Wayland applications / Window Decorations missing / Cursor looks different
-  programs.dconf.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   #### Audio ######################################################################
 
@@ -251,7 +233,6 @@
   rmg-wayland
   pokemmo-installer
   modrinth-app
-  lact
   ];
 
   #### Programs and their configurations #####################################################
@@ -361,6 +342,12 @@
   # xserver.wacom.enable = true;
   # Enable OpenTabletDriver
   # hardware.opentabletdriver.enable = true;
+
+    # Enable CoreCRTL
+    programs.corectrl = {
+        enable = true;
+        gpuOverclock.enable = true;
+    };
 
 ###############################################################################
 

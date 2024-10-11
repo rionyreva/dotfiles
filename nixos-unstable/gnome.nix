@@ -39,6 +39,7 @@
     gnomeExtensions.tweaks-in-system-menu
     gnomeExtensions.ddterm
     gnomeExtensions.solaar-extension
+    amberol
   ];
   
   # Ensure gnome-settings-daemon udev rules are enabled.
