@@ -3,7 +3,7 @@
 # Install Flatpak if not already installed
 if ! command -v flatpak &> /dev/null; then
   sudo zypper -y dup
-  sudo zypper install -y flatpak
+  sudo zypper install -y flatpak flatpak-builder
 fi
 
 # Add Flathub repository if not already added.
@@ -67,11 +67,8 @@ apps=(
   me.proton.Mail
   com.tutanota.Tutanota
   org.mozilla.Thunderbird
-  nz.mega.MEGAsync
   io.github.nokse22.teleprompter
-  org.kde.ghostwriter
   io.podman_desktop.PodmanDesktop
-  com.dropbox.Client
   io.github.dosbox-staging
   org.gnome.Fractal
   vet.rsc.OpenRSC.Launcher
