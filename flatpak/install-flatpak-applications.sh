@@ -75,6 +75,9 @@ apps=(
   io.github.dosbox-staging
   org.gnome.Fractal
   vet.rsc.OpenRSC.Launcher
+  io.github.pwr_solaar.solaar
+  net.puddletag.puddletag
+  org.gnome.Boxes
 )
 
 # Install each application
