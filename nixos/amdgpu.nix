@@ -27,4 +27,10 @@
   in [
     "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
   ];
+  
+  # ROCm
+  hardware.graphics.extraPackages = with pkgs; [
+    rocmPackages.clr.icd
+  ];
+  
 }

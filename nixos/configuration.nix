@@ -100,22 +100,31 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-  brave
-  librewolf
-  tor-browser
+  brave # Privacy-oriented browser for Desktop and Laptop computers
+  librewolf # Fork of Firefox, focused on privacy, security and freedom
+  tor-browser # Privacy-focused browser routing traffic through the Tor network
   
-  # protonmail-desktop
   electron-mail # ElectronMail is an Electron-based unofficial desktop client for ProtonMail
-  tutanota-desktop
-  github-desktop
+  tutanota-desktop # Tuta official desktop client
+  github-desktop # GUI for managing Git and GitHub
   
-  qpwgraph
+  qpwgraph # Qt graph manager for PipeWire, similar to QjackCtl
   
-  keepassxc
-  yubioath-flutter
+  keepassxc # Offline password manager with many features
+  yubioath-flutter # Yubico Authenticator for Desktop
   
-  rclone
-  vesktop
+  rclone # Command line program to sync files and directories to and from major cloud storage
+  vesktop # Alternate client for Discord with Vencord built-in
+  streamcontroller # Elegant Linux app for the Elgato Stream Deck with support for plugins
+  davinci-resolve-studio # Professional video editing, color, effects and audio post-processing
+  yt-dlp # Command-line tool to download videos from YouTube.com and other sites (youtube-dl fork)
+  vlc # Cross-platform media player and streaming server
+  mpv # General-purpose media player, fork of MPlayer and mplayer2
+  pixelorama # Free & open-source 2D sprite editor, made with the Godot Engine!
+  kdePackages.ghostwriter # Text editor for Markdown
+  kdePackages.kdenlive # Free and open source video editor, based on MLT Framework and KDE Frameworks
+  kdePackages.kleopatra # Certificate manager and GUI for OpenPGP and CMS cryptography
+  polari # IRC chat client designed to integrate with the GNOME desktop
 
   ];
 

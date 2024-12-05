@@ -16,6 +16,7 @@
     gnomeExtensions.fly-pie
     gnomeExtensions.wiggle
     gnomeExtensions.ddterm
+    gnomeExtensions.streamcontroller-integration
   ];
 
   # Enable GSConnect.
